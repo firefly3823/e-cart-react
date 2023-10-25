@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 function Header() {
     const wishlist = useSelector((state) => state.wishlistReducer)
+    const cart = useSelector((state) => state.cartReducer)
     // console.log(wishlist.length);
     return (
         <>
@@ -19,7 +20,7 @@ function Header() {
                         </Nav.Link>
                         <Nav.Link className='btn border rounded ms-3 d-flex align-items-center p-1'>
                             <Link className='d-flex align-items-center' style={{ textDecoration: "none", color: "black", fontWeight: "bold" }} to={'/cart'}><i className='fa-solid fa-cart-shopping me-2'></i>Cart</Link>
-                            <Badge className="ms-2 rounded">0</Badge>
+                            <Badge className="ms-2 rounded">{cart.length}</Badge>
                         </Nav.Link>
                     </Navbar.Collapse>
                     
